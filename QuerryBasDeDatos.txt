@@ -2,7 +2,7 @@
 Create database p2p1P3
 Use p2p1P3
 
-drop table Usuarios
+
 create table Usuarios(
 Usuarioid int identity(1,1) primary key,
 Usuario nvarchar(16) not null,
@@ -20,7 +20,7 @@ telefono int not null
 insert into Usuarios(Usuario,clave,Email,pNombre,sNombre,pApellido,sApellido,direccion,telefono) values
 					('MDPR75','admin123','matthiasp2004@gmail.com','Matthias','David','Paniagua','Rodriguez','Sarchi,Alajuela','87746218')
 
-drop table roles
+
 create table roles(
 RolId int identity(1,1) primary key,
 NombreRol nvarchar(10) not null,
@@ -29,17 +29,17 @@ constraint FK_Usuarioid  foreign key(usuarioid) references Usuarios(usuarioid)
 )
 insert into roles(nombreRol) values('Admin')
 
-drop table permisos
+
 create table permisos(
 permisoid int identity primary key,
 npermiso nvarchar(15)not null,
 )
-drop table menus
+
 create table Menus(
 MenuId int identity(1,1) primary key,
 NombreMenu nvarchar,
 )
-drop table pMenus
+
 create table pMenus(
 permisoid int,
 menuid int,
@@ -51,7 +51,7 @@ PermisoEscritura bit not null default 0,
 PermisoModificacion bit not null default 0,
 PErmisoEliminacion bit not null default 0,
 )
-drop table Usuariospermisos
+
 create table Usuariospermisos(
 uper int identity(1,1),
 Usuarioid int,
